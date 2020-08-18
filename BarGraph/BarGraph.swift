@@ -16,11 +16,18 @@ struct BarGraph: View {
     var body: some View {
         VStack {
             HStack(alignment: .lastTextBaseline) {
-                Rectangle().fill(Color.orange).frame(width: 100, height: 180).padding(5)
                 
-                Rectangle().fill(Color.green).frame(width: 100, height: 200).padding(5)
+                ForEach(self.reports, id: \.self.year) { report in
+                    
+                    BarView(report: report)
+                    
+                }
                 
-                Rectangle().fill(Color.blue).frame(width: 100, height: 300).padding(5)
+//                Rectangle().fill(Color.orange).frame(width: 100, height: 180).padding(5)
+//
+//                Rectangle().fill(Color.green).frame(width: 100, height: 200).padding(5)
+//
+//                Rectangle().fill(Color.blue).frame(width: 100, height: 300).padding(5)
                 
             }
         }
