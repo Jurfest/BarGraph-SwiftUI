@@ -11,6 +11,8 @@ import SwiftUI
 
 struct BarGraph: View {
     
+    let reports: [Report]
+    
     var body: some View {
         VStack {
             HStack(alignment: .lastTextBaseline) {
@@ -28,6 +30,6 @@ struct BarGraph: View {
 
 struct BarGraph_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        BarGraph(reports: Report.all())
     }
 }
